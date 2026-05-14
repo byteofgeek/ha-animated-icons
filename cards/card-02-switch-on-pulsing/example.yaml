@@ -1,0 +1,25 @@
+type: custom:mushroom-entity-card
+entity: switch.feliway_diffuser
+secondary_info: none
+icon_color: yellow
+grid_options:
+  columns: full
+card_mod:
+  style:
+    mushroom-shape-icon$: |
+      .shape {
+        position: relative;
+      }
+      .shape::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        border: 2px solid var(--icon-color);
+        opacity: {{ '1' if is_state(config.entity, 'on') else '0' }};
+        animation: {{ 'ping 1.5s ease-out infinite' if is_state(config.entity, 'on') else 'none' }};
+      }
+      @keyframes ping {
+        0% { inset: 0; opacity: 0.8; }
+        100% { inset: -14px; opacity: 0; }
+      }

@@ -1,0 +1,22 @@
+type: custom:mushroom-template-card
+entity: climate.wiser_office
+primary: Office
+icon: mdi:radiator-off
+icon_color: >-
+  {{ 'orange' if is_state_attr('climate.wiser_office', 'is_heating', true) else
+  'grey' }}
+card_mod:
+  style: |
+    ha-state-icon {
+      {% if is_state_attr('climate.wiser_office', 'is_heating', true) %}
+        animation: radiator-swap 2s steps(1) infinite;
+      {% else %}
+        --card-mod-icon: mdi:radiator-off;
+      {% endif %}
+    }
+    @keyframes radiator-swap {
+      0% { --card-mod-icon: mdi:radiator; }
+      50% { --card-mod-icon: mdi:radiator-disabled; }
+    }
+grid_options:
+  columns: full

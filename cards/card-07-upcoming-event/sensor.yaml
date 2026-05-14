@@ -1,0 +1,7 @@
+template:
+  - trigger:
+      - platform: time_pattern
+        seconds: "/2"
+    sensor:
+      - name: icon_alternator
+        state: "{{ now().second % 4 < 2 }}"

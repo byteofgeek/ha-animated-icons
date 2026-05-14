@@ -1,0 +1,27 @@
+type: custom:mushroom-template-card
+entity: [AIR_MONITOR_SENSOR]
+primary: Air Quality
+secondary: >
+  {{ states('[AIR_MONITOR_SENSOR_CO2]') }} ppm |  {{
+  states('[AIR_MONITOR_SENSOR_HUMIDITY]') }}% | {{
+  states('[AIR_MONITOR_SENSOR_TEMPERATURE]') }}°C
+icon: mdi:molecule-co2
+icon_color: >
+  {% set co2 = states(config.entity) | float(0) %} {% if co2 < 800 %} green {%
+  elif co2 < 1200 %} orange {% else %} red {% endif %}
+card_mod:
+  style: |
+    ha-state-icon {
+      {% set co2 = states(config.entity) | float(0) %}
+      transform-origin: center;
+      animation: {{ 'pulse 3s ease-in-out infinite' if co2 >= 800 else 'none' }};
+      {% if co2 >= 1200 %}
+        animation-duration: 1s;
+      {% endif %}
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+grid_options:
+  columns: full

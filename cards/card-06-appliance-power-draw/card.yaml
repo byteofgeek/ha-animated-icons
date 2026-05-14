@@ -1,0 +1,28 @@
+type: custom:mushroom-entity-card
+entity: [SWITCH_ENTITY]
+name: Washing Machine
+secondary_info: none
+grid_options:
+  columns: full
+icon: mdi:washing-machine
+card_mod:
+  style:
+    mushroom-shape-icon$: |
+      .shape {
+        position: relative;
+      }
+      .shape::before {
+        content: '';
+        position: absolute;
+        inset: -5px;
+        border-radius: 50%;
+        border: 2px solid transparent;
+        border-top-color: {{ 'var(--icon-color)' if is_state(config.entity, 'on') else 'transparent' }};
+        border-right-color: {{ 'var(--icon-color)' if is_state(config.entity, 'on') else 'transparent' }};
+        opacity: {{ '1' if is_state(config.entity, 'on') else '0' }};
+        animation: {{ 'spin ' ~ states('[CONFIGURATION_SPEED_SENSOR]') ~ 's linear infinite' if is_state(config.entity, 'on') else 'none' }};
+      }
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }

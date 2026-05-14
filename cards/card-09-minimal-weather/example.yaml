@@ -1,0 +1,61 @@
+type: custom:mushroom-template-card
+entity: weather.met_office_local
+primary: "{{ states(entity) | capitalize }} - {{ state_attr(entity, 'temperature') }}°C"
+secondary: ""
+icon: |-
+  {% set state = states(entity) %}
+  {% set mapper = {
+    'sunny': 'mdi:weather-sunny',
+    'clear-night': 'mdi:weather-night',
+    'cloudy': 'mdi:weather-cloudy',
+    'partlycloudy': 'mdi:weather-partly-cloudy',
+    'rainy': 'mdi:weather-rainy',
+    'pouring': 'mdi:weather-pouring',
+    'lightning': 'mdi:weather-lightning',
+    'lightning-rainy': 'mdi:weather-lightning-rainy',
+    'fog': 'mdi:weather-fog',
+    'windy': 'mdi:weather-windy',
+    'snowy': 'mdi:weather-snowy'
+  } %}
+  {{ mapper.get(state, 'mdi:weather-cloudy') }}
+icon_color: |-
+  {% set state = states(entity) %}
+  {% if state in ['sunny', 'clear-night'] %} yellow
+  {% elif state in ['rainy', 'pouring', 'lightning-rainy'] %} blue
+  {% elif state == 'lightning' %} amber
+  {% else %} grey
+  {% endif %}
+layout: horizontal
+grid_options:
+  columns: full
+card_mod:
+  style: |
+    ha-state-icon {
+      {% set state = states('weather.met_office_local') %}
+      {% if state == 'sunny' %}
+        animation: sun-spin 8s linear infinite;
+      {% elif state == 'rainy' or state == 'pouring' %}
+        animation: rain-slide 2s ease-in-out infinite;
+      {% elif state == 'cloudy' or state == 'partlycloudy' %}
+        animation: cloud-pulse 3s ease-in-out infinite;
+      {% elif state == 'windy' %}
+        animation: wind-shake 1.5s ease-in-out infinite;
+      {% endif %}
+    }
+    @keyframes sun-spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes rain-slide {
+      0%, 100% { transform: translateY(0); opacity: 1; }
+      50% { transform: translateY(3px); opacity: 0.7; }
+    }
+    @keyframes cloud-pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+    @keyframes wind-shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-2px) rotate(-2deg); }
+      75% { transform: translateX(2px) rotate(2deg); }
+    }

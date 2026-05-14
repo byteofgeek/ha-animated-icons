@@ -1,0 +1,13 @@
+template:
+  - trigger:
+      - platform: state
+        entity_id: sensor.smart_plug_mini_power
+    sensor:
+      - name: washing_machine_speed
+        state: >
+          {% set power = states('sensor.smart_plug_mini_power') | float(0) %}
+          {% if power > 1000 %}0.5
+          {% elif power > 300 %}1.5
+          {% elif power > 50 %}3
+          {% else %}5
+          {% endif %} 

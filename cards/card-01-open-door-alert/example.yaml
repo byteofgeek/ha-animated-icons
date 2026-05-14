@@ -1,0 +1,20 @@
+type: custom:mushroom-template-card
+entity: sensor.open_door_count
+primary: >-
+  {{ 'Doors Open' if states('sensor.open_door_count') | int > 0 else 'Doors
+  Closed' }}
+icon: >-
+  {{ 'mdi:bell' if states('sensor.open_door_count') | int > 0 else
+  'mdi:door-closed' }}
+icon_color: "{{ 'red' if states('sensor.open_door_count') | int > 0 else 'green' }}"
+card_mod:
+  style: |
+    ha-state-icon {
+      animation: {{ 'pulse-glow 1.8s ease-in-out infinite' if states('sensor.open_door_count') | int > 0 else 'none' }};
+    }
+    @keyframes pulse-glow {
+      0%, 100% { transform: scale(1); opacity: 1; filter: drop-shadow(0 0 3px rgba(255, 0, 0, 0.8)); }
+      50% { transform: scale(1.2); opacity: 0.8; filter: drop-shadow(0 0 14px rgba(255, 0, 0, 0.9)) drop-shadow(0 0 22px rgba(255, 0, 0, 0.7)); }
+    }
+grid_options:
+  columns: full

@@ -1,0 +1,32 @@
+type: custom:mushroom-light-card
+entity: light.0xf082c0fffedf2a0c
+use_light_color: true
+card_mod:
+  style: |
+    ha-state-icon {
+      {% if is_state(config.entity, 'on') %}
+        {% set bri_raw = state_attr(config.entity, 'brightness') | float(0) / 255 %}
+        {# High floor for opacity so it's always visible #}
+        {% set glow_opacity = 0.5 + (0.5 * bri_raw) %}
+        {% set rgb = state_attr(config.entity, 'rgb_color') %}
+        {% if rgb %}
+          {% set color = rgb|join(',') %}
+        {% else %}
+          {% set color = '255, 255, 255' %}
+        {% endif %}
+        
+        animation: glow 3s ease-in-out infinite;
+        --glow-color: rgba({{color}}, {{glow_opacity}});
+        {# Increased spread values so the aura is much larger #}
+        --glow-spread: {{ 15 + (15 * bri_raw) }}px;
+        --glow-intense: {{ 30 + (20 * bri_raw) }}px;
+      {% else %}
+        animation: none;
+      {% endif %}
+    }
+    @keyframes glow {
+      0%, 100% { filter: drop-shadow(0 0 4px var(--glow-color)); }
+      50% { filter: drop-shadow(0 0 var(--glow-spread) var(--glow-color)) drop-shadow(0 0 var(--glow-intense) var(--glow-color)); }
+    }
+grid_options:
+  columns: full

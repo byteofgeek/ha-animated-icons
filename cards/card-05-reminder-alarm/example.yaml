@@ -1,0 +1,23 @@
+type: custom:mushroom-template-card
+entity: timer.medication_reminder
+icon: mdi:alarm
+icon_color: "{{ 'red' if is_state('timer.medication_reminder', 'idle') else 'blue' }}"
+primary: Medication Reminder
+secondary: ""
+card_mod:
+  style: |
+    ha-state-icon {
+      transform-origin: center top;
+      animation: {{ 'ring 0.6s ease-in-out infinite' if is_state(config.entity, 'idle') else 'none' }};
+    }
+    @keyframes ring {
+      0%   { transform: rotate(0deg);   filter: drop-shadow(0 0 3px rgba(255, 0, 0, 0.8)); }
+      15%  { transform: rotate(-20deg); filter: drop-shadow(0 0 14px rgba(255, 0, 0, 0.9)) drop-shadow(0 0 22px rgba(255, 0, 0, 0.7)); }
+      30%  { transform: rotate(20deg);  filter: drop-shadow(0 0 14px rgba(255, 0, 0, 0.9)) drop-shadow(0 0 22px rgba(255, 0, 0, 0.7)); }
+      45%  { transform: rotate(-15deg); filter: drop-shadow(0 0 14px rgba(255, 0, 0, 0.9)) drop-shadow(0 0 22px rgba(255, 0, 0, 0.7)); }
+      60%  { transform: rotate(15deg);  filter: drop-shadow(0 0 14px rgba(255, 0, 0, 0.9)) drop-shadow(0 0 22px rgba(255, 0, 0, 0.7)); }
+      75%  { transform: rotate(0deg);   filter: drop-shadow(0 0 3px rgba(255, 0, 0, 0.8)); }
+      100% { transform: rotate(0deg);   filter: drop-shadow(0 0 3px rgba(255, 0, 0, 0.8)); }
+    }
+grid_options:
+  columns: full

@@ -1,0 +1,26 @@
+type: custom:mushroom-entity-card
+entity: [PROCESS_SENSOR]
+icon: mdi:harddisk
+name: Backup Manager
+card_mod:
+  style: |
+    ha-card {
+      overflow: hidden;
+      position: relative;
+    }
+    ha-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: -60%;
+      width: 50%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+      animation: {{ 'sweep 1.8s ease-in-out infinite' if is_state(config.entity, '[PROCESS_SENSOR_STATE]') else 'none' }};
+    }
+    @keyframes sweep {
+      0% { left: -60%; }
+      100% { left: 110%; }
+    }
+grid_options:
+  columns: full

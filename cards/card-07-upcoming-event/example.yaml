@@ -1,0 +1,21 @@
+type: custom:mushroom-template-card
+entity: calendar.youtube_calender
+primary: Upcoming Event
+icon: >-
+  {{ 'mdi:bell-alert' if is_state('calendar.youtube_calender', 'on') and
+  states('sensor.icon_alternator') == 'True' else 'mdi:calendar' }}
+icon_color: orange
+features_position: bottom
+card_mod:
+  style: |
+    ha-state-icon {
+      transform-origin: center bottom;
+      animation: {{ 'rock 1.5s ease-in-out infinite' if is_state(config.entity, 'on') else 'none' }};
+    }
+    @keyframes rock {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-15deg); }
+      75% { transform: rotate(15deg); }
+    }
+grid_options:
+  columns: full
