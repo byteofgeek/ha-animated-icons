@@ -1,7 +1,7 @@
 type: custom:mushroom-template-card
-entity: [TIMER_HELPER]
+entity: [TIMER.ENTITY_NAME]
 icon: mdi:alarm
-icon_color: "{{ 'red' if is_state('[TIMER_HELPER]', 'idle') else 'blue' }}"
+icon_color: "{{ 'red' if is_state('[TIMER.ENTITY_NAME]', 'idle') else 'blue' }}"
 primary: Medication Reminder
 secondary: ""
 card_mod:

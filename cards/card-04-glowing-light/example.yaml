@@ -6,7 +6,6 @@ card_mod:
     ha-state-icon {
       {% if is_state(config.entity, 'on') %}
         {% set bri_raw = state_attr(config.entity, 'brightness') | float(0) / 255 %}
-        {# High floor for opacity so it's always visible #}
         {% set glow_opacity = 0.5 + (0.5 * bri_raw) %}
         {% set rgb = state_attr(config.entity, 'rgb_color') %}
         {% if rgb %}
@@ -14,12 +13,10 @@ card_mod:
         {% else %}
           {% set color = '255, 255, 255' %}
         {% endif %}
-        
         animation: glow 3s ease-in-out infinite;
         --glow-color: rgba({{color}}, {{glow_opacity}});
-        {# Increased spread values so the aura is much larger #}
-        --glow-spread: {{ 15 + (15 * bri_raw) }}px;
-        --glow-intense: {{ 30 + (20 * bri_raw) }}px;
+        --glow-spread: {{ 25 + (35 * bri_raw) }}px;
+        --glow-intense: {{ 50 + (60 * bri_raw) }}px;
       {% else %}
         animation: none;
       {% endif %}

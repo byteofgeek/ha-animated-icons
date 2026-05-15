@@ -1,5 +1,5 @@
 type: custom:mushroom-entity-card
-entity: [SWITCH_ENTITY]
+entity: [SWITCH.ENTITY_NAME]
 secondary_info: none
 icon_color: yellow
 grid_options:

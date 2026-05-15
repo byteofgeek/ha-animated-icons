@@ -1,5 +1,5 @@
 type: custom:mushroom-entity-card
-entity: [PROCESS_SENSOR]
+entity: [SENSOR.ENTITY_NAME]
 icon: mdi:harddisk
 name: Backup Manager
 card_mod:
@@ -16,7 +16,7 @@ card_mod:
       width: 50%;
       height: 3px;
       background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
-      animation: {{ 'sweep 1.8s ease-in-out infinite' if is_state(config.entity, '[PROCESS_SENSOR_STATE]') else 'none' }};
+      animation: {{ 'sweep 1.8s ease-in-out infinite' if is_state(config.entity, 'create_backup') else 'none' }};
     }
     @keyframes sweep {
       0% { left: -60%; }

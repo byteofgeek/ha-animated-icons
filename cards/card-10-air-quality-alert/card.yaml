@@ -1,10 +1,10 @@
 type: custom:mushroom-template-card
-entity: [AIR_MONITOR_SENSOR]
+entity: [SENSOR.AIR_QUALITY_MONITOR_NAME]
 primary: Air Quality
 secondary: >
-  {{ states('[AIR_MONITOR_SENSOR_CO2]') }} ppm |  {{
-  states('[AIR_MONITOR_SENSOR_HUMIDITY]') }}% | {{
-  states('[AIR_MONITOR_SENSOR_TEMPERATURE]') }}°C
+  {{ states('SENSOR.AIR_QUALITY_MONITOR_CARBON_DIOXIDE') }} ppm |  {{
+  states('SENSOR.AIR_QUALITY_MONITOR_HUMIDITY') }}% | {{
+  states('SENSOR.AIR_QUALITY_MONITOR_TEMPERATURE') }}°C
 icon: mdi:molecule-co2
 icon_color: >
   {% set co2 = states(config.entity) | float(0) %} {% if co2 < 800 %} green {%

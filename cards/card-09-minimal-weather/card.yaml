@@ -1,5 +1,5 @@
 type: custom:mushroom-template-card
-entity: [WEATHER_PROVIDER_ENTITY]
+entity: [WEATHER.ENTITY_NAME]
 primary: "{{ states(entity) | capitalize }} - {{ state_attr(entity, 'temperature') }}°C"
 secondary: ""
 icon: |-
@@ -31,7 +31,7 @@ grid_options:
 card_mod:
   style: |
     ha-state-icon {
-      {% set state = states('[WEATHER_PROVIDER_ENTITY]') %}
+      {% set state = states('WEATHER.ENTITY_NAME') %}
       {% if state == 'sunny' %}
         animation: sun-spin 8s linear infinite;
       {% elif state == 'rainy' or state == 'pouring' %}

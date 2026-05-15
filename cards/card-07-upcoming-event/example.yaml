@@ -1,6 +1,8 @@
 type: custom:mushroom-template-card
 entity: calendar.youtube_calender
-primary: Upcoming Event
+primary: >-
+  {{ state_attr('calendar.youtube_calender', 'message') if
+  is_state('calendar.youtube_calender', 'on') else 'No Active Events' }}
 icon: >-
   {{ 'mdi:bell-alert' if is_state('calendar.youtube_calender', 'on') and
   states('sensor.icon_alternator') == 'True' else 'mdi:calendar' }}

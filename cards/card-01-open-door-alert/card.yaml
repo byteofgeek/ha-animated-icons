@@ -1,15 +1,14 @@
 type: custom:mushroom-template-card
-entity: [GROUP_HELPER_SENSOR]
+entity: [SENSOR.ENTITY_NAME]]
 primary: >-
-  {{ 'Doors Open' if states('[GROUP_HELPER_SENSOR]') | int > 0 else 'Doors Closed' }}
+  {{ 'Doors Open' if states('[SENSOR.ENTITY_NAME]') | int > 0 else 'Doors Closed' }}
 icon: >-
-  {{ 'mdi:bell' if states('[GROUP_HELPER_SENSOR]') | int > 0 else
-  'mdi:door-closed' }}
-icon_color: "{{ 'red' if states('[GROUP_HELPER_SENSOR]') | int > 0 else 'green' }}"
+  {{ 'mdi:bell' if states('[SENSOR.ENTITY_NAME]') | int > 0 else 'mdi:door-closed' }}
+icon_color: "{{ 'red' if states('[SENSOR.ENTITY_NAME]') | int > 0 else 'green' }}"
 card_mod:
   style: |
     ha-state-icon {
-      animation: {{ 'pulse-glow 1.8s ease-in-out infinite' if states('[GROUP_HELPER_SENSOR]') | int > 0 else 'none' }};
+      animation: {{ 'pulse-glow 1.8s ease-in-out infinite' if states('[SENSOR.ENTITY_NAME]') | int > 0 else 'none' }};
     }
     @keyframes pulse-glow {
       0%, 100% { transform: scale(1); opacity: 1; filter: drop-shadow(0 0 3px rgba(255, 0, 0, 0.8)); }

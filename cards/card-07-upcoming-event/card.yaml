@@ -1,9 +1,9 @@
 type: custom:mushroom-template-card
-entity: [CALENDAR_ENTITY]
-primary: Upcoming Event
+entity: [CALENDAR.ENTITY_NAME]
+primary: >-
+  {{ state_attr('[CALENDAR.ENTITY_NAME]', 'message') if is_state('[CALENDAR.ENTITY_NAME]', 'on') else 'No Active Events' }}
 icon: >-
-  {{ 'mdi:bell-alert' if is_state('[CALENDAR_ENTITY]', 'on') and
-  states('sensor.icon_alternator') == 'True' else 'mdi:calendar' }}
+  {{ 'mdi:bell-alert' if is_state('[CALENDAR.ENTITY_NAME]', 'on') and states('sensor.icon_alternator') == 'True' else 'mdi:calendar' }}
 icon_color: orange
 features_position: bottom
 card_mod:
