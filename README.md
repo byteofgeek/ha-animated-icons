@@ -1,4 +1,5 @@
 # ha-animated-icons
+
 A collection of animated Mushroom cards for Home Assistant dashboards. Each card uses standard Mushroom cards with `card_mod` and CSS animations to create purposeful, informative animations that enhance your dashboard without being overly flashy or performance-heavy.
 
 > 📺 These cards were created as part of a [Byte of Geek](https://www.youtube.com/@ByteOfGeek) YouTube video. Check out the video for a full walkthrough of each card and how to configure them.
@@ -19,42 +20,48 @@ Cards 06 and 07 also require additional configuration in `configuration.yaml` - 
 ## The Cards
 
 | # | Card | Animation | Use Case |
-|---|------|-----------|----------|
-| 01 | [Open Door Alert](#01-open-door-alert) | <img src="assets/previews/card-01-open-door-alert.gif" alt="Open Door Alert" style="background-color: transparent;" /> | Door/window sensors open |
-| 02 | [Switch On Pulsing](#02-switch-on-pulsing) | <img src="assets/previews/card-02-switch-on-pulsing.gif" alt="Switch On Pulsing" style="background-color: transparent;" /> | Switch active state |
-| 03 | [Process Running](#03-process-running) | <img src="assets/previews/card-03-process-running.gif" alt="Process Running" style="background-color: transparent;" /> | Backup or running process |
-| 04 | [Glowing Light](#04-glowing-light) | <img src="assets/previews/card-04-glowing-light.gif" alt="Glowing Light" style="background-color: transparent;" /> | Light entities |
-| 05 | [Reminder Alarm](#05-reminder-alarm) | <img src="assets/previews/card-05-reminder-alarm.gif" alt="Reminder Alarm" style="background-color: transparent;" /> | Timer alerts |
-| 06 | [Appliance Power Draw](#06-appliance-power-draw) | <img src="assets/previews/card-06-appliance-power-draw.gif" alt="Appliance Power Draw" style="background-color: transparent;" /> | Smart plug appliances |
-| 07 | [Upcoming Event](#07-upcoming-event) | <img src="assets/previews/card-07-upcoming-event.gif" alt="Upcoming Event" style="background-color: transparent;" /> | Calendar events |
-| 08 | [Heating Running](#08-heating-running) | <img src="assets/previews/card-08-heating-running.gif" alt="Heating Running" style="background-color: transparent;" /> | Climate/heating entities |
-| 09 | [Minimal Weather](#09-minimal-weather) | <img src="assets/previews/card-09-minimal-weather.gif" alt="Minimal Weather" style="background-color: transparent;" /> | Weather entities |
-| 10 | [Air Quality Alert](#10-air-quality-alert) | <img src="assets/previews/card-10-air-quality-alert.gif" alt="Air Quality Alert" style="background-color: transparent;" /> | CO2/air quality sensors |
+| --- | --- | --- | --- |
+| 01 | [Open Door Alert](#01-open-door-alert) | Pulsing red glow on bell icon | Door/window sensors open |
+| 02 | [Switch On Pulsing](#02-switch-on-pulsing) | Expanding ping ring around icon | Switch active state |
+| 03 | [Process Running](#03-process-running) | Sweeping line across bottom of card | Backup or running process |
+| 04 | [Glowing Light](#04-glowing-light) | Brightness and colour aware pulsing glow | Light entities |
+| 05 | [Reminder Alarm](#05-reminder-alarm) | Ringing bell swing with red glow | Timer alerts |
+| 06 | [Appliance Power Draw](#06-appliance-power-draw) | Spinning arc with speed responsive to power draw | Smart plug appliances |
+| 07 | [Upcoming Event](#07-upcoming-event) | Rocking icon alternating between calendar and bell | Calendar events |
+| 08 | [Heating Running](#08-heating-running) | Alternating radiator icons with orange glow | Climate/heating entities |
+| 09 | [Minimal Weather](#09-minimal-weather) | Condition-specific animations per weather state | Weather entities |
+| 10 | [Air Quality Alert](#10-air-quality-alert) | Colour and pulse speed responsive to CO2 level | CO2/air quality sensors |
 
 ---
 
 ## 01 Open Door Alert
 
-📁 [card.yaml](cards/card-01-open-door-alert/card.yaml) · [example.yaml](cards/card-01-open-door-alert/example.yaml)
+📁 [card.yaml](https://github.com/byteofgeek/ha-animated-icons/blob/main/cards/card-01-open-door-alert/card.yaml) · [example.yaml](https://github.com/byteofgeek/ha-animated-icons/blob/main/cards/card-01-open-door-alert/example.yaml)
+
+![Open Door Alert](https://github.com/byteofgeek/ha-animated-icons/raw/main/assets/previews/card-01-open-door-alert.gif)
 
 Displays a green door closed icon when all doors are shut. When one or more doors are open, switches to a pulsing red glowing bell icon.
 
 **Card type:** `custom:mushroom-template-card`
 
 **What to change:**
+
 - `[SENSOR.ENTITY_NAME]` - replace with your door count sensor entity ID. This should be a template sensor that returns the number of open doors or windows. See the example for a group based helper that counts open binary sensors.
 
 ---
 
 ## 02 Switch On Pulsing
 
-📁 [card.yaml](cards/card-02-switch-on-pulsing/card.yaml) · [example.yaml](cards/card-02-switch-on-pulsing/example.yaml)
+📁 [card.yaml](https://github.com/byteofgeek/ha-animated-icons/blob/main/cards/card-02-switch-on-pulsing/card.yaml) · [example.yaml](https://github.com/byteofgeek/ha-animated-icons/blob/main/cards/card-02-switch-on-pulsing/example.yaml)
+
+![Switch On Pulsing](https://github.com/byteofgeek/ha-animated-icons/raw/main/assets/previews/card-02-switch-on-pulsing.gif)
 
 Shows an expanding ring that pulses outward from the icon when a switch is active. The ring colour automatically matches the icon colour.
 
 **Card type:** `custom:mushroom-entity-card`
 
 **What to change:**
+
 - `[SWITCH.ENTITY_NAME]` - replace with your switch entity ID
 - `icon_color` - set to any colour you prefer, the ring will match
 
@@ -62,13 +69,16 @@ Shows an expanding ring that pulses outward from the icon when a switch is activ
 
 ## 03 Process Running
 
-📁 [card.yaml](cards/card-03-process-running/card.yaml) · [example.yaml](cards/card-03-process-running/example.yaml)
+📁 [card.yaml](https://github.com/byteofgeek/ha-animated-icons/blob/main/cards/card-03-process-running/card.yaml) · [example.yaml](https://github.com/byteofgeek/ha-animated-icons/blob/main/cards/card-03-process-running/example.yaml)
+
+![Process Running](https://github.com/byteofgeek/ha-animated-icons/raw/main/assets/previews/card-03-process-running.gif)
 
 Shows an animated line sweeping across the bottom of the card when a process is active. Returns to a standard static card when the process completes. The example uses the Home Assistant backup manager.
 
 **Card type:** `custom:mushroom-entity-card`
 
 **What to change:**
+
 - `[SENSOR.ENTITY_NAME]` - replace with your sensor entity ID
 - `create_backup` - replace with the state your entity shows when the process is active. Check Developer Tools → States to find the correct value.
 - `icon` and `name` - update to suit your use case
@@ -77,26 +87,32 @@ Shows an animated line sweeping across the bottom of the card when a process is 
 
 ## 04 Glowing Light
 
-📁 [card.yaml](cards/card-04-glowing-light/card.yaml) · [example.yaml](cards/card-04-glowing-light/example.yaml)
+📁 [card.yaml](https://github.com/byteofgeek/ha-animated-icons/blob/main/cards/card-04-glowing-light/card.yaml) · [example.yaml](https://github.com/byteofgeek/ha-animated-icons/blob/main/cards/card-04-glowing-light/example.yaml)
+
+![Glowing Light](https://github.com/byteofgeek/ha-animated-icons/raw/main/assets/previews/card-04-glowing-light.gif)
 
 A brightness and colour aware glow that pulses around the icon. At low brightness the glow is subtle; at full brightness it is significantly more intense. Automatically uses the actual light colour if available.
 
 **Card type:** `custom:mushroom-light-card`
 
 **What to change:**
+
 - `[LIGHT.ENTITY_NAME]` - replace with your light entity ID
 
 ---
 
 ## 05 Reminder Alarm
 
-📁 [card.yaml](cards/card-05-reminder-alarm/card.yaml) · [example.yaml](cards/card-05-reminder-alarm/example.yaml)
+📁 [card.yaml](https://github.com/byteofgeek/ha-animated-icons/blob/main/cards/card-05-reminder-alarm/card.yaml) · [example.yaml](https://github.com/byteofgeek/ha-animated-icons/blob/main/cards/card-05-reminder-alarm/example.yaml)
+
+![Reminder Alarm](https://github.com/byteofgeek/ha-animated-icons/raw/main/assets/previews/card-05-reminder-alarm.gif)
 
 Displays a static alarm icon while a timer is counting down. When the timer reaches zero the icon turns red and swings side to side with a glowing red effect, like a ringing alarm bell.
 
 **Card type:** `custom:mushroom-template-card`
 
 **What to change:**
+
 - `[TIMER.ENTITY_NAME]` - replace with your timer entity ID
 - `primary` - update to the name of your timer or reminder
 
@@ -106,19 +122,23 @@ Displays a static alarm icon while a timer is counting down. When the timer reac
 
 ## 06 Appliance Power Draw
 
-📁 [card.yaml](cards/card-06-appliance-power-draw/card.yaml) · [example.yaml](cards/card-06-appliance-power-draw/example.yaml) · [sensor.yaml](cards/card-06-appliance-power-draw/sensor.yaml)
+📁 [card.yaml](https://github.com/byteofgeek/ha-animated-icons/blob/main/cards/card-06-appliance-power-draw/card.yaml) · [example.yaml](https://github.com/byteofgeek/ha-animated-icons/blob/main/cards/card-06-appliance-power-draw/example.yaml) · [sensor.yaml](https://github.com/byteofgeek/ha-animated-icons/blob/main/cards/card-06-appliance-power-draw/sensor.yaml)
+
+![Appliance Power Draw](https://github.com/byteofgeek/ha-animated-icons/raw/main/assets/previews/card-06-appliance-power-draw.gif)
 
 A spinning arc around the icon that speeds up or slows down in real time based on the power draw of an appliance connected to a smart plug.
 
 **Card type:** `custom:mushroom-entity-card`
 
-**Requires:** An additional trigger based template sensor in `configuration.yaml`. See [sensor.yaml](cards/card-06-appliance-power-draw/sensor.yaml) for the configuration and restart Home Assistant after adding it.
+**Requires:** An additional trigger based template sensor in `configuration.yaml`. See [sensor.yaml](https://github.com/byteofgeek/ha-animated-icons/blob/main/cards/card-06-appliance-power-draw/sensor.yaml) for the configuration and restart Home Assistant after adding it.
 
 **What to change in sensor.yaml:**
+
 - `[SENSOR.ENTITY_NAME]` - replace with the power sensor entity of your smart plug
 - The wattage thresholds - adjust to match your appliance. Run a full cycle and observe the power draw in Developer Tools → States to find the right values.
 
 **What to change in card.yaml:**
+
 - `[SWITCH.ENTITY_NAME]` - replace with your smart plug switch entity ID
 - `name` and `icon` - update to suit your appliance
 
@@ -126,15 +146,18 @@ A spinning arc around the icon that speeds up or slows down in real time based o
 
 ## 07 Upcoming Event
 
-📁 [card.yaml](cards/card-07-upcoming-event/card.yaml) · [example.yaml](cards/card-07-upcoming-event/example.yaml) · [sensor.yaml](cards/card-07-upcoming-event/sensor.yaml)
+📁 [card.yaml](https://github.com/byteofgeek/ha-animated-icons/blob/main/cards/card-07-upcoming-event/card.yaml) · [example.yaml](https://github.com/byteofgeek/ha-animated-icons/blob/main/cards/card-07-upcoming-event/example.yaml) · [sensor.yaml](https://github.com/byteofgeek/ha-animated-icons/blob/main/cards/card-07-upcoming-event/sensor.yaml)
+
+![Upcoming Event](https://github.com/byteofgeek/ha-animated-icons/raw/main/assets/previews/card-07-upcoming-event.gif)
 
 Displays a static calendar icon when no event is active. When a calendar event is in progress, the icon rocks side to side and alternates between a calendar and a bell-alert icon. The card primary text updates to show the event name.
 
 **Card type:** `custom:mushroom-template-card`
 
-**Requires:** An additional time based template sensor in `configuration.yaml`. See [sensor.yaml](cards/card-07-upcoming-event/sensor.yaml) for the configuration and restart Home Assistant after adding it.
+**Requires:** An additional time based template sensor in `configuration.yaml`. See [sensor.yaml](https://github.com/byteofgeek/ha-animated-icons/blob/main/cards/card-07-upcoming-event/sensor.yaml) for the configuration and restart Home Assistant after adding it.
 
 **What to change in card.yaml:**
+
 - `[CALENDAR.ENTITY_NAME]` - replace with your calendar entity ID
 
 > **Note:** The calendar entity state is `on` only when an event is currently in progress, not when one is upcoming. The card will show the static calendar icon until the event start time is reached.
@@ -143,13 +166,16 @@ Displays a static calendar icon when no event is active. When a calendar event i
 
 ## 08 Heating Running
 
-📁 [card.yaml](cards/card-08-heating-running/card.yaml) · [example.yaml](cards/card-08-heating-running/example.yaml)
+📁 [card.yaml](https://github.com/byteofgeek/ha-animated-icons/blob/main/cards/card-08-heating-running/card.yaml) · [example.yaml](https://github.com/byteofgeek/ha-animated-icons/blob/main/cards/card-08-heating-running/example.yaml)
+
+![Heating Running](https://github.com/byteofgeek/ha-animated-icons/raw/main/assets/previews/card-08-heating-running.gif)
 
 Alternates between two radiator icons with a pulsing orange glow when heating is active. Returns to a static grey radiator-off icon when the heating stops.
 
 **Card type:** `custom:mushroom-template-card`
 
 **What to change:**
+
 - `[CLIMATE.ENTITY_NAME]` - replace with your climate entity ID
 - `primary` - update to the name of the room
 - `is_heating` - if your climate integration uses a different attribute to indicate heating is active, replace this with the correct attribute name. Check Developer Tools → States → your climate entity attributes to find it.
@@ -158,13 +184,16 @@ Alternates between two radiator icons with a pulsing orange glow when heating is
 
 ## 09 Minimal Weather
 
-📁 [card.yaml](cards/card-09-minimal-weather/card.yaml) · [example.yaml](cards/card-09-minimal-weather/example.yaml)
+📁 [card.yaml](https://github.com/byteofgeek/ha-animated-icons/blob/main/cards/card-09-minimal-weather/card.yaml) · [example.yaml](https://github.com/byteofgeek/ha-animated-icons/blob/main/cards/card-09-minimal-weather/example.yaml)
+
+![Minimal Weather](https://github.com/byteofgeek/ha-animated-icons/raw/main/assets/previews/card-09-minimal-weather.gif)
 
 A clean weather card showing an animated icon and current temperature. The animation and colour change based on the current weather condition - sunny icons spin, rain icons slide, clouds pulse, and wind icons shake.
 
 **Card type:** `custom:mushroom-template-card`
 
 **What to change:**
+
 - `[WEATHER.ENTITY_NAME]` - replace with your weather entity ID. This appears in both the `entity` field and inside the `card_mod` style block.
 - The icon mapper and colour conditions can be extended if your weather provider returns additional condition states not listed.
 
@@ -172,13 +201,16 @@ A clean weather card showing an animated icon and current temperature. The anima
 
 ## 10 Air Quality Alert
 
-📁 [card.yaml](cards/card-10-air-quality-alert/card.yaml) · [example.yaml](cards/card-10-air-quality-alert/example.yaml)
+📁 [card.yaml](https://github.com/byteofgeek/ha-animated-icons/blob/main/cards/card-10-air-quality-alert/card.yaml) · [example.yaml](https://github.com/byteofgeek/ha-animated-icons/blob/main/cards/card-10-air-quality-alert/example.yaml)
+
+![Air Quality Alert](https://github.com/byteofgeek/ha-animated-icons/raw/main/assets/previews/card-10-air-quality-alert.gif)
 
 Displays a CO2 icon that changes colour and pulse speed based on the current reading. Green and static at safe levels, amber with a slow pulse at moderate levels, red with a faster pulse at high levels.
 
 **Card type:** `custom:mushroom-template-card`
 
 **What to change:**
+
 - `[SENSOR.AIR_QUALITY_MONITOR_NAME]` - replace with your CO2 sensor entity ID
 - `[SENSOR.AIR_QUALITY_MONITOR_CARBON_DIOXIDE]`, `[SENSOR.AIR_QUALITY_MONITOR_HUMIDITY]`, `[SENSOR.AIR_QUALITY_MONITOR_TEMPERATURE]` - replace with the relevant sensor entity IDs for your device. If your sensor does not provide humidity or temperature, remove those values from the `secondary` field.
 - The ppm thresholds (default: below 800 safe, 800–1200 moderate, above 1200 high) - adjust to match your own acceptable ranges if needed.
