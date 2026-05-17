@@ -20,16 +20,16 @@ Cards 06 and 07 also require additional configuration in `configuration.yaml` - 
 
 | # | Card | Animation | Use Case |
 |---|------|-----------|----------|
-| 01 | [Open Door Alert](#01-open-door-alert) | ![Open Door Alert](assets/previews/card-01-open-door-alert.gif) | Door/window sensors open |
-| 02 | [Switch On Pulsing](#02-switch-on-pulsing) | ![Switch On Pulsing](assets/previews/card-02-switch-on-pulsing.gif) | Switch active state |
-| 03 | [Process Running](#03-process-running) | ![Process Running](assets/previews/card-03-process-running.gif) | Backup or running process |
-| 04 | [Glowing Light](#04-glowing-light) | ![Glowing Light](assets/previews/card-04-glowing-light.gif) | Light entities |
-| 05 | [Reminder Alarm](#05-reminder-alarm) | ![Reminder Alarm](assets/previews/card-05-reminder-alarm.gif) | Timer alerts |
-| 06 | [Appliance Power Draw](#06-appliance-power-draw) | ![Appliance Power Draw](assets/previews/card-06-appliance-power-draw.gif) | Smart plug appliances |
-| 07 | [Upcoming Event](#07-upcoming-event) | ![Upcoming Event](assets/previews/card-07-upcoming-event.gif) | Calendar events |
-| 08 | [Heating Running](#08-heating-running) | ![Heating Running](assets/previews/card-08-heating-running.gif) | Climate/heating entities |
-| 09 | [Minimal Weather](#09-minimal-weather) | ![Minimal Weather](assets/previews/card-09-minimal-weather.gif) | Weather entities |
-| 10 | [Air Quality Alert](#10-air-quality-alert) | ![Air Quality Alert](assets/previews/card-10-air-quality-alert.gif) | CO2/air quality sensors |
+| 01 | [Open Door Alert](#01-open-door-alert) | <img src="assets/previews/card-01-open-door-alert.gif" alt="Open Door Alert" style="background-color: transparent;" /> | Door/window sensors open |
+| 02 | [Switch On Pulsing](#02-switch-on-pulsing) | <img src="assets/previews/card-02-switch-on-pulsing.gif" alt="Switch On Pulsing" style="background-color: transparent;" /> | Switch active state |
+| 03 | [Process Running](#03-process-running) | <img src="assets/previews/card-03-process-running.gif" alt="Process Running" style="background-color: transparent;" /> | Backup or running process |
+| 04 | [Glowing Light](#04-glowing-light) | <img src="assets/previews/card-04-glowing-light.gif" alt="Glowing Light" style="background-color: transparent;" /> | Light entities |
+| 05 | [Reminder Alarm](#05-reminder-alarm) | <img src="assets/previews/card-05-reminder-alarm.gif" alt="Reminder Alarm" style="background-color: transparent;" /> | Timer alerts |
+| 06 | [Appliance Power Draw](#06-appliance-power-draw) | <img src="assets/previews/card-06-appliance-power-draw.gif" alt="Appliance Power Draw" style="background-color: transparent;" /> | Smart plug appliances |
+| 07 | [Upcoming Event](#07-upcoming-event) | <img src="assets/previews/card-07-upcoming-event.gif" alt="Upcoming Event" style="background-color: transparent;" /> | Calendar events |
+| 08 | [Heating Running](#08-heating-running) | <img src="assets/previews/card-08-heating-running.gif" alt="Heating Running" style="background-color: transparent;" /> | Climate/heating entities |
+| 09 | [Minimal Weather](#09-minimal-weather) | <img src="assets/previews/card-09-minimal-weather.gif" alt="Minimal Weather" style="background-color: transparent;" /> | Weather entities |
+| 10 | [Air Quality Alert](#10-air-quality-alert) | <img src="assets/previews/card-10-air-quality-alert.gif" alt="Air Quality Alert" style="background-color: transparent;" /> | CO2/air quality sensors |
 
 ---
 
