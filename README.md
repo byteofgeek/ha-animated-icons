@@ -20,16 +20,16 @@ Cards 06 and 07 also require additional configuration in `configuration.yaml` - 
 
 | # | Card | Animation | Use Case |
 |---|------|-----------|----------|
-| 01 | [Open Door Alert](#01-open-door-alert) | Pulsing red glow | Door/window sensors open |
-| 02 | [Switch On Pulsing](#02-switch-on-pulsing) | Expanding ping ring | Switch active state |
-| 03 | [Process Running](#03-process-running) | Sweeping bottom line | Backup or running process |
-| 04 | [Glowing Light](#04-glowing-light) | Brightness aware glow | Light entities |
-| 05 | [Reminder Alarm](#05-reminder-alarm) | Ringing alarm with glow | Timer alerts |
-| 06 | [Appliance Power Draw](#06-appliance-power-draw) | Power draw responsive spinning ring | Smart plug appliances |
-| 07 | [Upcoming Event](#07-upcoming-event) | Rocking alternating icon | Calendar events |
-| 08 | [Heating Running](#08-heating-running) | Alternating icon with orange glow | Climate/heating entities |
-| 09 | [Minimal Weather](#09-minimal-weather) | State specific animations | Weather entities |
-| 10 | [Air Quality Alert](#10-air-quality-alert) | Colour and severity aware pulse | CO2/air quality sensors |
+| 01 | [Open Door Alert](#01-open-door-alert) | ![Open Door Alert](assets/previews/card-01-open-door-alert.gif) | Door/window sensors open |
+| 02 | [Switch On Pulsing](#02-switch-on-pulsing) | ![Switch On Pulsing](assets/previews/card-02-switch-on-pulsing.gif) | Switch active state |
+| 03 | [Process Running](#03-process-running) | ![Process Running](assets/previews/card-03-process-running.gif) | Backup or running process |
+| 04 | [Glowing Light](#04-glowing-light) | ![Glowing Light](assets/previews/card-04-glowing-light.gif) | Light entities |
+| 05 | [Reminder Alarm](#05-reminder-alarm) | ![Reminder Alarm](assets/previews/card-05-reminder-alarm.gif) | Timer alerts |
+| 06 | [Appliance Power Draw](#06-appliance-power-draw) | ![Appliance Power Draw](assets/previews/card-06-appliance-power-draw.gif) | Smart plug appliances |
+| 07 | [Upcoming Event](#07-upcoming-event) | ![Upcoming Event](assets/previews/card-07-upcoming-event.gif) | Calendar events |
+| 08 | [Heating Running](#08-heating-running) | ![Heating Running](assets/previews/card-08-heating-running.gif) | Climate/heating entities |
+| 09 | [Minimal Weather](#09-minimal-weather) | ![Minimal Weather](assets/previews/card-09-minimal-weather.gif) | Weather entities |
+| 10 | [Air Quality Alert](#10-air-quality-alert) | ![Air Quality Alert](assets/previews/card-10-air-quality-alert.gif) | CO2/air quality sensors |
 
 ---
 
